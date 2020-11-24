@@ -54,7 +54,7 @@ class SuBook:
 
 
 class SuLibrary:
-    def __init__(self, listBook:list, listPeople):
+    def __init__(self, listBook:list):
         self.listBook = listBook
 
     def __repr__(self):
