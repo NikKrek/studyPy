@@ -69,7 +69,7 @@ class SuLibrary:
     def removeBook(self, idRemoveBook:int):
         j = 1
         for i in self.listBook:
-            print(i)
+        
             if idRemoveBook == j:
                 self.listBook.remove(i)
             j += 1
