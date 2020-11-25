@@ -39,7 +39,7 @@ class SuLibrary:
                 self.listBook.remove(i)
             j += 1
 
-    d    def printAllBooks(self):
+    def printAllBooks(self):
         book = self.listBook
         print('%-50s%-20s%-5s%-2s' % ('Name', 'Author', 'Year', 'id'))
         for ij in book:
