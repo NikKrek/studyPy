@@ -11,10 +11,10 @@ class SuBook:
         self.borrow = borrow
 
     def __repr__(self):
-        return f'name - {self.name}, author - {self.author}, year - {self.year}, id - {self.idB}'
+        return f'{self.name},{self.author},{self.year},{self.idB}'
 
     def __str__(self):
-        return f'name - {self.name}, author - {self.author}, year - {self.year}, id - {self.idB}'
+        return f'{self.name},{self.author},{self.year},{self.idB}'
 
 
 
@@ -39,11 +39,15 @@ class SuLibrary:
                 self.listBook.remove(i)
             j += 1
 
-    def printAllBooks(self):
+    d    def printAllBooks(self):
         book = self.listBook
-        # print('%-30s%-15s%-5s%-2s' % ('Name', 'author', 'year', 'id'))
-        for i in book:
-            print(i)
+        print('%-50s%-20s%-5s%-2s' % ('Name', 'Author', 'Year', 'id'))
+        for ij in book:
+            bookT = str(ij)
+            bookT = bookT.replace("[", "")
+            bookT = bookT.replace("]", "")
+            bookT = bookT.split(',')
+            print('%-50s%-20s%-5s%-2s' % (bookT[0], bookT[1], bookT[2], bookT[3]))
     # def giveBook(self):
         
 
@@ -57,10 +61,10 @@ class SuPeople:
 
 
     def __repr__(self):
-        return f'name - {self.name}, surname - {self.surname}, age - {self.age}'
+        return f'{self.name},{self.surname},{self.age}'
 
     def __str__(self):
-        return f'name - {self.name}, surname - {self.surname}, age - {self.age}'
+        return f'{self.name},{self.surname},{self.age}'
 
 
 if __name__ == "__main__":
