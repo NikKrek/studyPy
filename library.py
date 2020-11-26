@@ -31,9 +31,10 @@
         ???
 '''
 
+
 class SuBook:
 
-    def __init__(self, name, author, year, id_b, borrow=None):
+    def __init__(self, name, author, year, id_b, borrow=False):
 
         self.name = name
         self.author = author
@@ -42,16 +43,16 @@ class SuBook:
         self.borrow = borrow
 
     def __repr__(self):
-        return f'{self.name},{self.author},{self.year},{self.id_b}'
+        return f'{self.name},{self.author},{self.year},{self.id_b},{self.borrow}'
 
     def __str__(self):
-        return f'{self.name},{self.author},{self.year},{self.id_b}'
+        return f'{self.name},{self.author},{self.year},{self.id_b},{self.borrow}'
 
 
 class SuLibrary:
-    def __init__(self, list_book: list, list_man):
+    def __init__(self, list_book: list, man=None):
         self.list_book = list_book
-        self.list_man = list_man
+        self.man = man
 
     def add_book(self, add_book):
         self.list_book.append(add_book)
@@ -74,9 +75,22 @@ class SuLibrary:
             print('%-50s%-20s%-5s%-2s' % (book_temp[0], book_temp[1], book_temp[2], book_temp[3]))
 
     def give_book(self, id_book, id_man):
-        print(id_book)
-        print(id_man)  
-          
+        for i in self.list_book:
+            print(i)
+            j = str(i)
+            j = j.split(',')
+            print(j[4])
+            # if j[3] == id_book and j[4] == 'False':
+            #     SuLibrary.remove_book(id_book)
+
+
+            print(i[3])
+
+
+
+
+
+
 
 
 class SuPeople:
@@ -104,9 +118,9 @@ if __name__ == "__main__":
     book3 = SuBook(name='TestTestTest', author='TestTest', year=1980, id_b=3)
 
     myLib.add_book(book3)
+    # myLib.remove_book(3)
 
-    myLib.remove_book(3)
+    # SuLibrary.print_all_books(myLib)
 
-    SuLibrary.print_all_books(myLib)
+    myLib.give_book(3, 1)
 
-    SuLibrary.give_book(book2, man1)
