@@ -74,7 +74,7 @@ class SuLibrary:
             book_temp = book_temp.split(',')
             print('%-50s%-20s%-5s%-2s' % (book_temp[0], book_temp[1], book_temp[2], book_temp[3]))
 
-    def give_book(self, id_book, id_man):
+    def give_book(self, id_book: int, id_man: int):
         for i in self.list_book:
             print(i)
             j = str(i)
