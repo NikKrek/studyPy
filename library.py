@@ -32,9 +32,6 @@
 '''
 
 
-import tkinter
-
-
 
 
 class SuBook:
