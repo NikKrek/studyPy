@@ -66,7 +66,6 @@ class SuLibrary:
 
     def print_lib_books(self):
         book = self.list_book
-        print(self.list_book)
         print('%40s' % 'Shelf of library')
         print('%-50s%-20s%-5s%-3s' % ('Name:', 'Author', 'Year', 'id'))
         for i in book:
