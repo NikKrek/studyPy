@@ -1,0 +1,24 @@
+class MyRange:
+    def __init__(self, x, y=None, step=1):
+        self.x = x  
+        self.y = y
+        self.step = step
+
+        if self.y is None:
+            self.start, self.stop = -1, x
+        else:
+            self.start, self.stop = x, y
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        self.start += self.step
+        if self.start < self.stop:
+            return self.start
+        raise StopIteration
+
+
+if __name__ == '__main__':
+    print(list(range(12)))
+    print(list(MyRange(2, 12)))
